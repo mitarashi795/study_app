@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>勉強きろく</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>📚 勉強きろく</h1>
+
+  <section class="card">
+    <input type="text" id="title" placeholder="勉強した項目(例:ubiquitous の意味)">
+    <input type="text" id="tag" list="tagList" placeholder="科目タグ(例:英語、数学)">
+    <datalist id="tagList"></datalist>
+    <div class="row rate" id="newRate"></div>
+    <button class="add" id="addBtn">追加</button>
+  </section>
+
+  <section class="card">
+    <h2>正答率の推移 <small id="chartNote"></small></h2>
+    <div id="chart"></div>
+  </section>
+
+  <section class="card">
+    <input type="text" id="q" placeholder="キーワードで検索">
+    <div class="row filters" id="ratingFilters"></div>
+    <div class="row filters" id="tagFilters"></div>
+  </section>
+
+  <div id="list"></div>
+
+  <footer class="row">
+    <button id="exportBtn">バックアップ(書き出し)</button>
+    <button id="importBtn">読み込み</button>
+    <input type="file" id="importFile" accept="application/json" hidden>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
