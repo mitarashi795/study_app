@@ -7,36 +7,50 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <h1>📚 勉強きろく</h1>
+<div class="layout">
+  <aside>
+    <h2>フォルダ</h2>
+    <div class="row acts">
+      <button id="addF">追加</button>
+      <button id="renameF">名前変更</button>
+      <button id="delF">削除</button>
+    </div>
+    <select id="folderMove"></select>
+    <div id="tree"></div>
+    <p class="hint">選択中のフォルダの下に追加されます。項目やフォルダはドラッグでも移動できます。</p>
+  </aside>
 
-  <section class="card">
-    <input type="text" id="title" placeholder="勉強した項目(例:ubiquitous の意味)">
-    <input type="text" id="tag" list="tagList" placeholder="科目タグ(例:英語、数学)">
-    <datalist id="tagList"></datalist>
-    <div class="row rate" id="newRate"></div>
-    <button class="add" id="addBtn">追加</button>
-  </section>
+  <main>
+    <h1>勉強きろく</h1>
 
-  <section class="card">
-    <h2>正答率の推移 <small id="chartNote"></small></h2>
-    <div id="chart"></div>
-  </section>
+    <section class="card">
+      <div class="meta" id="target"></div>
+      <input type="text" id="title" placeholder="項目名、または番号の範囲(例: 1-20 / 21,22 / 1-5,8)">
+      <div class="row rate" id="newRate"></div>
+      <button class="add" id="addBtn">記録</button>
+      <div class="status" id="status"></div>
+    </section>
 
-  <section class="card">
-    <input type="text" id="q" placeholder="キーワードで検索">
-    <div class="row filters" id="ratingFilters"></div>
-    <div class="row filters" id="tagFilters"></div>
-  </section>
+    <section class="card">
+      <h2>正答率の推移 <small id="chartNote"></small></h2>
+      <div id="chart"></div>
+    </section>
 
-  <div id="list"></div>
+    <section class="card">
+      <input type="text" id="q" placeholder="キーワードで検索">
+      <div class="row filters" id="ratingFilters"></div>
+      <div class="legend">履歴の記号: 正=見ずに正解 / 惜=考え方OK・ミス / 誤=答えられない</div>
+    </section>
 
-  <footer class="row">
-    <button id="exportBtn">バックアップ(書き出し)</button>
-    <button id="importBtn">読み込み</button>
-    <input type="file" id="importFile" accept="application/json" hidden>
-  </footer>
-</main>
+    <div id="list"></div>
+
+    <footer class="row">
+      <button id="exportBtn">バックアップ(書き出し)</button>
+      <button id="importBtn">読み込み</button>
+      <input type="file" id="importFile" accept="application/json" hidden>
+    </footer>
+  </main>
+</div>
 <script src="app.js"></script>
 </body>
 </html>
